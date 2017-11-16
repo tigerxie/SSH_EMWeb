@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="tiger_shop"
+  id="myeclipse.1453124421380"
+  context-root="/tiger_shop"
+  j2ee-spec="5.0"
+  archive="tiger_shop.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

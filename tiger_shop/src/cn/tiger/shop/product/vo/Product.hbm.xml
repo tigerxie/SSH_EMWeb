@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	
+	<class name="cn.tiger.shop.product.vo.Product" table="product">
+		<id name="pid">
+			<generator class="native"></generator>
+		</id>
+		<property name="pname"></property>
+		<property name="market_price"></property>
+		<property name="shop_price"></property>
+		<property name="image"></property>
+		<property name="pdesc"></property>
+		<property name="is_hot"></property>
+		<property name="pdate"></property>
+		<!-- 配置所关联的二级分类 -->
+		<many-to-one lazy="false" name="categorySecond" class="cn.tiger.shop.categorysecond.vo.CategorySecond" column="csid"></many-to-one>
+	</class>
+	
+</hibernate-mapping>

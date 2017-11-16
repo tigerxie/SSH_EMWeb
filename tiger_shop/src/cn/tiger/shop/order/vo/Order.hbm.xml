@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.tiger.shop.order.vo.Order" table="orders">
+		<id name="oid">
+			<generator class="native"></generator>
+		</id>
+		<property name="total"></property>
+		<property name="ordertime"></property>
+		<property name="addr"></property>
+		<property name="name"></property>
+		<property name="phone"></property>
+		<property name="state"></property>
+		<!-- 配置与用户的关联 -->
+		<many-to-one name="user" class="cn.tiger.shop.user.vo.User" column="uid"></many-to-one>
+		<!-- 配置与订单条目的关联 -->
+		<set name="orderItems" cascade="save-update" lazy="false" order-by="itemid">
+			<key column="oid"/>
+			<one-to-many class="cn.tiger.shop.order.vo.OrderItem"/>
+		</set>
+	</class>
+</hibernate-mapping>
